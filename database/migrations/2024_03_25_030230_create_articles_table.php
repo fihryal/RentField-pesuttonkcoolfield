@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('article', function (Blueprint $table) {
             $table->id();
-            $table->string('article');
+            $table->text('judul',255);
+            $table->text('article',255);
             $table->timestamps();
         });
     }
