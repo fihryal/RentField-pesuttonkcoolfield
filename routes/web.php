@@ -14,12 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
 
-Route::get('/article',[articleController::class,'index']);
+
+Route::get('/',[articleController::class,'index']);
+Route::get('/article',[articleController::class,'article']);
 
 Route::get('/article/create',[articleController::class,'create']);
 Route::post ('/article',[articleController::class,'store']);
+Route::get('/article/{id}/edit',[articleController::class, 'edit']);
+Route::patch ('/article/{id}',[articleController::class,'update']);
 

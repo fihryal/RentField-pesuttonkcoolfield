@@ -30,6 +30,11 @@
                           <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
                             {{$item -> article}}
                           </p>
+
+                          <div class="flex justify-between ">
+                            <a href="{{url('article/'.$item->id.'/edit')}}" type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-5 mb-2 mt-5 dark:focus:ring-yellow-900">edit</a>
+                            <a type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-5 mt-5 mb-2 dark:bg-red-600 dark:hover:bg-red-700 ">Red</a>
+                        </div>
                         </div>
                       </article>
                 </li>

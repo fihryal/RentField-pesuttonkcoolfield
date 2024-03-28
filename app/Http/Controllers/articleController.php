@@ -9,9 +9,14 @@ use Illuminate\Http\Request;
 class articleController extends Controller
 {
 
-    public function index(){
+    public function article(){
         $data = article::orderBy('created_at', 'desc')->get();
-        return view('article')->with('data',$data);
+        return view('article.article')->with('data',$data);
+    }
+
+    public function index(){
+        $data = article::orderBy('created_at', 'desc')->paginate(4);
+        return view('index')->with('data',$data);
     }
 
     public function show($id){
@@ -19,7 +24,7 @@ class articleController extends Controller
     }
     
     public function create(){
-        return view('atricle.create');
+        return view('article.create');
     }
 
 
@@ -33,22 +38,37 @@ class articleController extends Controller
             'judul.required' => 'judul wajib diisi'
         ]);
 
-        article::create([
+        $data = [
             'article' => $request->article,
             'judul' => $request->judul,
-            
+        ];
 
-        ]);
+        article::create($data);
         return redirect('/article')->with('success', 'Berhasil menambahkan data');
     }
 
 
-    public function edit(){
-
+    public function edit($id){
+        $data = article::where('id', $id)->first();
+        return view ('article.edit')->with('data',$data);
     }
     
-    public function update(){
+    public function update(Request $request, $id){
+        $request->validate([
+            'article' => 'required',
+            'judul' => 'required'
+        ],[
+            'article.required' => 'artikel wajib diisi',
+            'judul.required' => 'judul wajib diisi'
+        ]);
 
+        $data = [
+            'article' => $request->article,
+            'judul' => $request->judul,
+        ];
+
+        article::where('id',$id)->update($data);
+        return redirect('/article')->with('success', 'Berhasil melakukan update data');
     }
 
     public function destroy(){
