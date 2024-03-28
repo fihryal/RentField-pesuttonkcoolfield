@@ -10,7 +10,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 </head>
 
@@ -21,7 +21,7 @@
     @yield('main')
 
     <!-- start footer -->
-    <footer class="bg-white">
+    <footer class="bg-white border">
         <div class="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
             <div class="sm:flex sm:items-center sm:justify-between">
                 <div class="text-teal-600">
