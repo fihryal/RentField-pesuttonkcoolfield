@@ -23,4 +23,4 @@ Route::get('/article/create',[articleController::class,'create']);
 Route::post ('/article',[articleController::class,'store']);
 Route::get('/article/{id}/edit',[articleController::class, 'edit']);
 Route::patch ('/article/{id}',[articleController::class,'update']);
-
+Route::delete ('/article/{id}',[articleController::class,'delete']);

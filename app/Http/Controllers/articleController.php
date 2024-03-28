@@ -68,10 +68,11 @@ class articleController extends Controller
         ];
 
         article::where('id',$id)->update($data);
-        return redirect('/article')->with('success', 'Berhasil melakukan update data');
+        return redirect('/article')->with('success', 'Berhasil melakukan perubahan data');
     }
 
-    public function destroy(){
-
+    public function delete($id){
+        article::where('id',$id)->delete($id);
+        return redirect('/article')->with('success', 'Berhasil menghapus data');
     }
 }
