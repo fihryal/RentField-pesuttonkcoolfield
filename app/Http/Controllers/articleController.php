@@ -19,6 +19,11 @@ class articleController extends Controller
         return view('index')->with('data',$data);
     }
 
+    public function detail($id){
+        $data = article::where('id', $id)->first();
+        return view ('article.detail')->with('data',$data);
+    }
+
     public function show($id){
  
     }

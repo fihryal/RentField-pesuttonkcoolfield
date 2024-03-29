@@ -24,3 +24,4 @@ Route::post ('/article',[articleController::class,'store']);
 Route::get('/article/{id}/edit',[articleController::class, 'edit']);
 Route::patch ('/article/{id}',[articleController::class,'update']);
 Route::delete ('/article/{id}',[articleController::class,'delete']);
+Route::get('/article/{id}',[articleController::class,'detail']);
