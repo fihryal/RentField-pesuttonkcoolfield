@@ -1,5 +1,5 @@
 <!-- Start navbar -->
-<nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200">
+<nav class="bg-white w-full z-20 top-0 start-0 border-b border-gray-200">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="logo.png" class="h-8" alt="Flowbite Logo">
@@ -64,15 +64,5 @@
         });
     });
 
-        document.addEventListener('DOMContentLoaded', function() {
-        var navLinks = document.querySelectorAll('#navbar-sticky a');
-
-        navLinks.forEach(function(navLink) {
-            // Cek apakah href navlink sama dengan URL saat ini
-            if (navLink.href === window.location.href) {
-                // Tandai navlink sebagai aktif dengan menambahkan kelas 'active'
-                navLink.classList.add('active');
-            }
-        });
-    });
+    
 </script>
