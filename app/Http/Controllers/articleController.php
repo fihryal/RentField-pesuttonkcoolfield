@@ -37,17 +37,24 @@ class articleController extends Controller
     public function store(Request $request){
         $request->validate([
             'article' => 'required',
-            'judul' => 'required'
+            'judul' => 'required',
+            'foto' => 'required|mimes:jpeg,jpg,png'
         ],[
             'article.required' => 'artikel wajib diisi',
-            'judul.required' => 'judul wajib diisi'
+            'judul.required' => 'judul wajib diisi',
+            'foto.required' => 'foto wajib diisi',
+            'foto.mimes' => 'foto hanya diperbolehkan berinteraksi JPEG, JPG dan PNG'
         ]);
 
+        $foto_file = $request->file('foto');
+        $foto_extension = $foto_file->extension();
+        $foto_nama = date('ymdhis').".".$foto_extension;
+        $foto_file -> move(public_path('foto'),$foto_nama);
         $data = [
             'article' => $request->article,
             'judul' => $request->judul,
+            'foto' => $foto_nama,
         ];
-
         article::create($data);
         return redirect('/article')->with('success', 'Berhasil menambahkan data');
     }

@@ -224,7 +224,7 @@
 <section class="  h-flex flex justify-center items-center ">
 
     <div class="mx-auto max-w-screen-xl px-4 py-8 mt-20 sm:px-6 sm:py-12 lg:px-8">
-        <header>
+        <header class="mr-4 ml-4">
             <p class=" max-w-md text-gray-500">
                 what's new in
             </p>
@@ -232,15 +232,19 @@
             <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">pesut tonk cool field</h2>
         </header>
 
-        <ul class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul class="mt-4 mr-4 ml-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <?php $i = $data -> firstItem() ?>
             @foreach ($data as $item)
             <li>
                 <a href="{{url('article/'.$item->id)}}">
                     <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
-                        <img alt=""
-                            src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                            class="h-56 w-full object-cover" />
+                        @if ($item->foto)
+                        <img
+                        alt=""
+                        src="{{url('foto').'/'.$item->foto}}"
+                        class="h-56 w-full object-cover"
+                        />
+                        @endif
 
                         <div class="bg-white p-4 sm:p-6">
                             <time datetime="2022-10-10"

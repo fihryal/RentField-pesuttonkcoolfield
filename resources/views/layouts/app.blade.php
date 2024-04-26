@@ -9,6 +9,7 @@
 
 
     <script src="https://cdn.tailwindcss.com"></script>
+    
 
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
@@ -26,7 +27,7 @@
             <div class="sm:flex sm:items-center sm:justify-between">
                 <div class="text-teal-600">
                     <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img src="https://i.ibb.co/0ngf5Tg/logo.png" class="h-8" alt="Flowbite Logo">
+                        <img src="logo.png" class="h-8 " alt="Flowbite Logo">
                         <span class="self-center text-2xl font-semibold whitespace-nowrap ">PESUT TONK COOL FIELD</span>
                     </a>
                 </div>
