@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\aboutController;
 use App\Http\Controllers\articleController;
+use App\Http\Controllers\servicesController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[articleController::class,'index']);
+Route::get('/about', [aboutController::class, 'about']);
+Route::get('/services', [servicesController::class, 'services']);
 Route::get('/article',[articleController::class,'article']);
 
 Route::get('/article/create',[articleController::class,'create'])->middleware('isAdmin');

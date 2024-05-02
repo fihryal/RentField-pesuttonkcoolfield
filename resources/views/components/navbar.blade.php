@@ -9,11 +9,13 @@
 
             @if (Auth::check())
             <a type="button" href="/sesi/logout"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center "> Log out
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center ">
+                Log out
             </a>
             @else
             <a type="button" href="/sesi"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center ">Log in
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center ">Log
+                in
             </a>
             @endif
 
@@ -29,23 +31,27 @@
             </button>
         </div>
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
+            <ul
+                class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
                 <li>
                     <a href="{{url('/')}}"
                         class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:"
                         aria-current="page">Home</a>
                 </li>
+
+                <li>
+                    <a href="{{url('about')}}"
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:">About</a>
+                </li>
+
+                <li>
+                    <a href="{{url('services')}}"
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:">Services</a>
+                </li>
+
                 <li>
                     <a href="{{url('article')}}"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:">Article</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:">Services</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:">Contact</a>
                 </li>
             </ul>
         </div>
@@ -54,15 +60,13 @@
 <!-- Navbar end -->
 
 <script>
-    // JavaScript to toggle navbar dropdown
-    document.addEventListener('DOMContentLoaded', function() {
-        var navbarToggle = document.getElementById('navbar-toggle');
-        var navbarMenu = document.getElementById('navbar-sticky');
+// JavaScript to toggle navbar dropdown
+document.addEventListener('DOMContentLoaded', function() {
+    var navbarToggle = document.getElementById('navbar-toggle');
+    var navbarMenu = document.getElementById('navbar-sticky');
 
-        navbarToggle.addEventListener('click', function() {
-            navbarMenu.classList.toggle('hidden');
-        });
+    navbarToggle.addEventListener('click', function() {
+        navbarMenu.classList.toggle('hidden');
     });
-
-    
+});
 </script>
