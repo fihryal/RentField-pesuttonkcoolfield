@@ -24,8 +24,8 @@ class articleController extends Controller
         return view ('article.detail')->with('data',$data);
     }
 
-    public function show($id){
- 
+    public function error(){
+        return view('article.error');
     }
     
     public function create(){

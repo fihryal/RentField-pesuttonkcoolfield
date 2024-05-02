@@ -19,12 +19,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[articleController::class,'index']);
 Route::get('/article',[articleController::class,'article']);
+Route::get('/error',[articleController::class,'error']);
 
-Route::get('/article/create',[articleController::class,'create'])->middleware('isAdmin');
-Route::post ('/article',[articleController::class,'store'])->middleware('isAdmin');
-Route::get('/article/{id}/edit',[articleController::class, 'edit'])->middleware('isAdmin');
-Route::patch ('/article/{id}',[articleController::class,'update'])->middleware('isAdmin');
-Route::delete ('/article/{id}',[articleController::class,'delete'])->middleware('isAdmin');
+Route::get('/article/create',[articleController::class,'create'])->middleware('isGuest');
+Route::post ('/article',[articleController::class,'store'])->middleware('isGuest');
+Route::get('/article/{id}/edit',[articleController::class, 'edit'])->middleware('isGuest');
+Route::patch ('/article/{id}',[articleController::class,'update'])->middleware('isGuest');
+Route::delete ('/article/{id}',[articleController::class,'delete'])->middleware('isGuest');
 Route::get('/article/{id}',[articleController::class,'detail']);
 
 Route::get('/sesi',[SessionController::class,'index']);
