@@ -1,0 +1,83 @@
+/* colors */
+
+:root {
+    --primary: green;
+    --bg: #010101;
+}
+
+/* Modal Box */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-container {
+    position: relative;
+    background-color: #fefefe;
+    color: var(--bg);
+    margin: 5% auto;
+    padding: 1.2rem;
+    border: 1px solid #666;
+    width: 60%;
+    height: 105%;
+    animation: animateModal 0.5s;
+}
+
+/* Modal Animation */
+@keyframes animateModal {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    align-items: center;
+}
+
+/* button form disabled */
+.rent-submit-button.disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+.rent-submit-button.disabled:hover {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+/* laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 100%;
+    }
+}
+
+/* tablet */
+@media (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    .modal-content {
+        flex-wrap: wrap;
+    }
+}
+
+/* mobile phone */
+@media (max-width: 375px) {
+    html {
+        font-size: 55%;
+    }
+}
