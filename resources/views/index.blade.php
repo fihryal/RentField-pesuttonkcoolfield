@@ -181,7 +181,7 @@
 
     <div class="block justify-center items-center">
         <h1 class="text-3xl text-white mt-32 text-center font-extrabold sm:text-5xl">
-            About Us
+            <span class="text-amber-300">About</span> Us
         </h1>
         <h1 class="text-xl text-white mt-12 pr-32 pl-32  sm:text-3xl  text-center">
             Kami adalah penyedia rental lapangan olahraga terpercaya di daerah ini. Dengan fasilitas modern dan layanan
@@ -239,11 +239,7 @@
                 <a href="{{url('article/'.$item->id)}}">
                     <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
                         @if ($item->foto)
-                        <img
-                        alt=""
-                        src="{{url('foto').'/'.$item->foto}}"
-                        class="h-56 w-full object-cover"
-                        />
+                        <img alt="" src="{{url('foto').'/'.$item->foto}}" class="h-56 w-full object-cover" />
                         @endif
 
                         <div class="bg-white p-4 sm:p-6">
@@ -251,7 +247,7 @@
                                 class="block text-xs text-gray-500">{{$item -> created_at -> format('Y-m-d')}}</time>
 
                             <p href="#">
-                                <h3 class="mt-0.5 line-clamp-2 text-lg text-gray-900">{{$item -> judul}}</h3>
+                            <h3 class="mt-0.5 line-clamp-2 text-lg text-gray-900">{{$item -> judul}}</h3>
                             </p>
 
                             <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
