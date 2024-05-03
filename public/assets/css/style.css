@@ -1,8 +1,26 @@
 /* colors */
 
 :root {
-    --primary: green;
+    --primary: #00a671;
     --bg: #010101;
+}
+
+/* custom navbar */
+.navbar-custom .navbar-custom-nav a:hover {
+    color: var(--primary);
+}
+
+.navbar-custom .navbar-custom-nav a::after {
+    content: "";
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar-custom .navbar-custom-nav a:hover::after {
+    transform: scaleX(0.5);
 }
 
 /* Modal Box */
