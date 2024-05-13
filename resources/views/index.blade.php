@@ -10,11 +10,11 @@
             <h1 class="text-3xl font-extrabold sm:text-5xl text-white drop-shadow-xl">
                 <a class="text-amber-300" href="#">We make your</a> rental easy
 
-                <span class="sm:block text-white drop-shadow-xl"> and covered </span>
+                <span class="sm:block text-white drop-shadow-xl pt-2"> and covered </span>
             </h1>
 
             <div class="mt-8 flex flex-wrap justify-center gap-4">
-                <a class="block w-full rounded-full border border-white bg-white px-12 py-3 text-sm font-medium text-gray-600 hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
+                <a class="block w-42 rounded-full border border-white bg-white px-12 py-3 text-sm font-medium text-gray-600 hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
                     href="#">
                     rent now
                 </a>
