@@ -19,9 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/',[articleController::class,'index']);
+Route::get('/home',[articleController::class,'index']);
 Route::get('/about', [aboutController::class, 'about']);
-Route::get('/services', [servicesController::class, 'services']);
+Route::get('/services', [servicesController::class, 'services'])->middleware('isAdmin');
 Route::get('/article',[articleController::class,'article']);
 Route::get('/error',[articleController::class,'error']);
 

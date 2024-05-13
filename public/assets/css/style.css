@@ -23,6 +23,11 @@
     transform: scaleX(0.5);
 }
 
+.navbar-custom-nav a:is(:link, :active, :visited).active {
+    color: var(--primary);
+    display: block;
+}
+
 /* Modal Box */
 .modal {
     display: none;
@@ -75,6 +80,20 @@
     cursor: not-allowed;
 }
 
+/* testimonial */
+
+.testimonial-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonial {
+    width: 100%;
+    display: none;
+    transition: transform 0.3s ease;
+}
+
 /* laptop */
 @media (max-width: 1366px) {
     html {
@@ -85,17 +104,21 @@
 /* tablet */
 @media (max-width: 768px) {
     html {
-        font-size: 62.5%;
+        font-size: 75%;
     }
 
     .modal-content {
         flex-wrap: wrap;
+    }
+
+    .map {
+        width: 100%;
     }
 }
 
 /* mobile phone */
 @media (max-width: 375px) {
     html {
-        font-size: 55%;
+        font-size: 65%;
     }
 }

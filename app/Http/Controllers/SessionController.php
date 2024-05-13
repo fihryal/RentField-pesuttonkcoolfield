@@ -28,7 +28,7 @@ class SessionController extends Controller
         ];
 
         if (Auth::attempt($infologin)) {
-            return redirect('/')->with('success', 'Berhasil login');
+            return redirect('/home')->with('success', 'Berhasil login');
         }else{
             return redirect('sesi')->withErrors('Email dan Password yang dimasukkan tidak valid');
         }
@@ -36,7 +36,7 @@ class SessionController extends Controller
 
     function logout(){
         Auth::logout();
-        return redirect('/')->with('success',' Berhasil logut');
+        return redirect('/home')->with('success',' Berhasil logut');
     }
 
     function register(){
@@ -70,7 +70,7 @@ class SessionController extends Controller
         ];
 
         if (Auth::attempt($infologin)) {
-            return redirect('/')->with('success', Auth::user()->name . 'Berhasil login');
+            return redirect('/home')->with('success', Auth::user()->name . 'Berhasil login');
         }else{
             return redirect('sesi/register')->withErrors('Email dan Password yang dimasukkan tidak valid');
         }

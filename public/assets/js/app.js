@@ -1,3 +1,13 @@
+// active nav link
+const activePage = window.location.pathname;
+const navLink = document
+    .querySelectorAll(".navbar-custom-nav a")
+    .forEach((link) => {
+        if (link.href.includes(`${activePage}`)) {
+            link.classList.add("active");
+        }
+    });
+
 // Modal Box
 const rentModal = document.querySelector("#rent-modal");
 const rentButtons = document.querySelectorAll(".rent-button");
@@ -8,6 +18,31 @@ rentButtons.forEach((btn) => {
         e.preventDefault();
     };
 });
+
+// Testimoni
+let testimonials = document.querySelectorAll(".testimonial");
+let currentIndex = 0;
+
+function showTestimonial(index) {
+    testimonials.forEach((testimonial, i) => {
+        if (i === index) {
+            testimonial.style.display = "block";
+        } else {
+            testimonial.style.display = "none";
+        }
+    });
+}
+
+function nextTestimonial() {
+    currentIndex++;
+    if (currentIndex >= testimonials.length) {
+        currentIndex = 0;
+    }
+    showTestimonial(currentIndex);
+}
+
+// Example of using setInterval() to automate the slideshow
+setInterval(nextTestimonial, 5000); // Change testimonial every 5 seconds
 
 // klik tombol close modal
 document.querySelector(".modal .cancel-button").onclick = (e) => {
